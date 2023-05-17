@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import NavImage from '../../assets/images/pic1.jpg'
+import './NavBar.css'
 
 
 const NavBar = () => {
@@ -14,7 +15,8 @@ const NavBar = () => {
 
 
     return (
-        <div className="navbar bg-base-100">
+       <div className="md:px-8">
+         <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,6 +38,7 @@ const NavBar = () => {
           <Link to="login" className="btn">Login</Link>
         </div>
       </div>
+       </div>
     );
 };
 

@@ -3,7 +3,8 @@ import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     return (
-        <div className="hero min-h-screen bg-base-200">
+       <div className="bg-stone-500">
+         <div className="min-h-screen">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
       <h1 className="text-5xl font-bold">Login now!</h1>
@@ -15,7 +16,7 @@ const Login = () => {
 </button>
       </div>
     </div>
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div className="card-body">
         <div className="form-control">
           <label className="label">
@@ -39,6 +40,7 @@ const Login = () => {
     </div>
   </div>
 </div>
+       </div>
     );
 };
 
