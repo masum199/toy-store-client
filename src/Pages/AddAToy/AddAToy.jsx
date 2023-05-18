@@ -32,7 +32,11 @@ const AddAToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                if(data.insertedId){
+                    alert('product added successfully')
+                }
             })
+      
     }
 
 
@@ -42,19 +46,18 @@ const AddAToy = () => {
                 {/* 1 */}
                 <div className="flex gap-16">
                     <div>
-                        <div className="form-control">
+                        <div className="form-control w-80">
                             <label className="input-group input-group-vertical">
                                 <span>Picture URL</span>
-                                <input type="text" name="photo" placeholder="Picture URL" className="input input-bordered" />
+                                <input type="text" name="photo" placeholder="Picture URL" className="input input-bordered" required/>
                             </label>
                         </div>
                     </div>
                     <div>
-                        <div className="form-control">
-
+                        <div className="form-control w-80">
                             <label className="input-group input-group-vertical">
                                 <span>Toy Name</span>
-                                <input type="text" name="toyname" placeholder="Toy Name" className="input input-bordered" />
+                                <input type="text" name="toyname" placeholder="Toy Name" className="input input-bordered" required/>
                             </label>
                         </div>
                     </div>
@@ -62,18 +65,18 @@ const AddAToy = () => {
                 {/* 2 */}
                 <div className="flex gap-16 my-8">
                     <div>
-                        <div className="form-control">
+                        <div className="form-control w-80">
                             <label className="input-group input-group-vertical">
                                 <span>seller name</span>
-                                <input type="text" defaultValue={user?.displayName} name="sellername" placeholder="seller name" className="input input-bordered" />
+                                <input type="text" defaultValue={user?.displayName} name="sellername" placeholder="seller name" className="input input-bordered" required/>
                             </label>
                         </div>
                     </div>
                     <div>
-                        <div className="form-control">
+                        <div className="form-control w-80">
                             <label className="input-group input-group-vertical">
                                 <span>seller email</span>
-                                <input type="text" defaultValue={user?.email} name="selleremail" placeholder="seller email" className="input input-bordered" />
+                                <input type="text" defaultValue={user?.email} name="selleremail" placeholder="seller email" className="input input-bordered" required/>
                             </label>
                         </div>
                     </div>
@@ -81,18 +84,18 @@ const AddAToy = () => {
                 {/* 3 */}
                 <div className="flex gap-16">
                     <div>
-                        <div className="form-control">
+                        <div className="form-control w-80">
                             <label className="input-group input-group-vertical">
                                 <span>Price</span>
-                                <input type="text" name="price" placeholder="Price" className="input input-bordered" />
+                                <input type="text" name="price" placeholder="Price" className="input input-bordered" required/>
                             </label>
                         </div>
                     </div>
                     <div>
-                        <div className="form-control">
+                        <div className="form-control w-80">
                             <label className="input-group input-group-vertical">
                                 <span>Rating</span>
-                                <input type="text" name="rating" placeholder="Rating" className="input input-bordered" />
+                                <input type="text" name="rating" placeholder="Rating" className="input input-bordered" required/>
                             </label>
                         </div>
                     </div>
@@ -100,33 +103,32 @@ const AddAToy = () => {
                 {/* 4 */}
                 <div className="flex gap-16 my-6">
                     <div>
-                        <div className="form-control">
+                        <div className="form-control w-80">
                             <label className="input-group input-group-vertical">
                                 <span>Available quantity</span>
-                                <input type="text" name="quantity" placeholder="Available quantity" className="input input-bordered" />
+                                <input type="text" name="quantity" placeholder="Available quantity" className="input input-bordered" required/>
                             </label>
                         </div>
                     </div>
                     <div>
-                        <div className="form-control">
+                        <div className="form-control w-80">
                             <label className="input-group input-group-vertical">
                                 <span>Detail description</span>
-                                <input type="text" name="details" placeholder="Detail description" className="input input-bordered" />
+                                <textarea type="text" name="details" placeholder="Detail description" className="input input-bordered h-20" required/>
                             </label>
                         </div>
                     </div>
                 </div>
-                {/*  */}
                 <select name="category" className="select w-full max-w-xs" defaultValue="">
                     <option disabled value="">Pick your category</option>
                     <option value="Racing Cars">Racing Cars</option>
                     <option value="Off-Road Vehicles">Off-Road Vehicles</option>
                     <option value="Construction Vehicles">Construction Vehicles</option>
-                    <option value="Monster Trucks">Monster Trucks</option>
-                    <option value="Monster Trucks">Helicopters</option>
-                    <option value="Brand">Brand</option>
-                </select>
-                <input className="my-10 btn btn-block" type="submit" value="submit" name="" id="" />
+                    <option value="Monster Trucks">Monster cars</option>
+                    <option value="Monster Trucks">classic cars</option>
+                    <option value="Brand">exotic cars</option>
+                </select >
+                <input className="my-10 btn btn-block" type="submit" value="submit"/>
             </form>
 
 

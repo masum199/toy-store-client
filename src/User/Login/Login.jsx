@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 
@@ -15,6 +16,19 @@ const Login = () => {
     googleLogin()
       .then(result => {
         console.log(result)
+
+        Swal.fire({
+          title: 'Success',
+          text: 'Logged in successfully!',
+          icon: 'success',
+          toast: true,
+          position: 'top-center',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
+
+
         navigate(from)
       })
       .catch(error => {
@@ -32,11 +46,35 @@ const Login = () => {
     signIn(email, password)
       .then(result => {
         console.log(result.user)
+        
+        Swal.fire({
+          title: 'Success',
+          text: 'Logged in successfully!',
+          icon: 'success',
+          toast: true,
+          position: 'top-center',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
+        
         navigate(from)
 
       })
       .catch(error => {
         console.log(error.message)
+        
+        Swal.fire({
+          title: 'Wrong user or password',
+          text: 'please use right email and password',
+          icon: 'error',
+          toast: true,
+          position: 'top-center',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
+
       })
   }
 
