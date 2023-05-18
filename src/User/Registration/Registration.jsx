@@ -1,7 +1,39 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 
 const Registration = () => {
+  const {createUser} = useContext(AuthContext)
+
+
+
+  const handleRegister = event =>{
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, photo, email, password);
+
+    createUser(email,password)
+    .then(result => {
+      console.log(result)
+      const createdUser = result.user;
+      updateProfile(createdUser,{
+        displayName: name,
+        photoURL: photo,
+       })
+    })
+    .catch(error =>{
+      console.log(error.message)
+    })
+          
+  }
+
+
     return (
         <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -10,7 +42,8 @@ const Registration = () => {
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div className="card-body">
 
-        <div className="form-control">
+       <form onSubmit={handleRegister}>
+       <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>
           </label>
@@ -28,8 +61,6 @@ const Registration = () => {
           </label>
           <input type="text" name="email" placeholder="email" className="input input-bordered" />
         </div>
-
-
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
@@ -42,8 +73,9 @@ const Registration = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <input type="submit" className="btn btn-primary" value="Register" />
         </div>
+       </form>
       </div>
     </div>
   </div>

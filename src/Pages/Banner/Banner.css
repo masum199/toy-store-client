@@ -1,0 +1,6 @@
+.textStyle{
+    color: transparent;
+    font-family: arial, Helvetica, sans-serif;
+    -webkit-text-stroke-width: 1px ;
+    -webkit-text-stroke-color: black ;
+}
