@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import NavImage from '../../assets/images/pic1.jpg'
+import NavImage from '../../assets/images/toy12.jpg'
 import './NavBar.css'
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -12,9 +12,14 @@ const NavBar = () => {
 
   const NavItem = <>
     <li><NavLink to="/"  activeclassname="active">Home</NavLink></li>
-    <li><NavLink to="/allToys">All Toys</NavLink></li>
+    {
+      user ? <>
+      <li><NavLink to="/allToys">All Toys</NavLink></li>
     <li><NavLink to="/myToy">My Toys</NavLink></li>
     <li><NavLink to="/addAToy"> Add A Toy</NavLink></li>
+      </> : ""
+    }
+
     <li><NavLink to="/blog">Blogs</NavLink></li>
   </>
 
@@ -37,8 +42,8 @@ const NavBar = () => {
               {NavItem}
             </ul>
           </div>
-          <img className="w-10 rounded-2xl" src={NavImage} alt="" />
-          <p className="btn btn-ghost normal-case text-xl">CarMania</p>
+          <img className="w-20 rounded-2xl" src={NavImage} alt="" />
+          <p className="btn btn-ghost normal-case font-serif font-bold text-4xl">CarMania</p>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-14 px-1">
