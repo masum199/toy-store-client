@@ -1,13 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const MyToysCards = ({ mytoy, index }) => {
     const { toyName, sellername, category, price, quantity, _id ,photo,details} = mytoy
 
-
+// delete
     const handleDelete = _id => {
         const proceed = confirm('Are you sure you want to delete')
         if(proceed){
@@ -35,6 +36,10 @@ const MyToysCards = ({ mytoy, index }) => {
     }
 
 
+   
+    
+
+
 
     return (
 
@@ -47,7 +52,7 @@ const MyToysCards = ({ mytoy, index }) => {
             <td>{price}</td>
             <td>{quantity}</td>
             <td>{details}</td>
-            <td><button className="btn">UPDATE</button></td>
+            <td><Link to={`/updatetoys/${_id}`}><button className="btn">UPDATE</button></Link></td>
             <td><button onClick={() => handleDelete(_id)} className="btn">DELETE</button></td>
         </tr>
 
