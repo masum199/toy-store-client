@@ -8,7 +8,7 @@ const AddAToy = () => {
 
 
     const handleAddToy = (event) => {
-
+        const proceed = confirm('Are you sure you want to delete')
         event.preventDefault();
         const form = event.target
         const photo = form.photo.value
@@ -23,6 +23,7 @@ const AddAToy = () => {
 
         const newToys = { photo, toyName, sellername, sellerEmail, price, rating, quantity, details, category }
         console.log(newToys)
+       if(proceed){
         fetch('http://localhost:5000/alltoys', {
             method: 'POST',
             headers: {
@@ -30,6 +31,7 @@ const AddAToy = () => {
             },
             body: JSON.stringify(newToys)
         })
+       
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -46,6 +48,7 @@ const AddAToy = () => {
                       });
                 }
             })
+        }
       
     }
 

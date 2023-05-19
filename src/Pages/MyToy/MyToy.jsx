@@ -6,7 +6,7 @@ import MyToysCards from "./MyToysCards";
 const MyToy = () => {
     const [mytoys,setMytoys] = useState([])
     const {user} = useContext(AuthContext)
-    console.log(user.email)
+    
     useEffect(() => {
         fetch(`http://localhost:5000/alltoys/user/${user.email}`)
         .then(res => res.json())
@@ -16,12 +16,35 @@ const MyToy = () => {
     },[user])
     return (
         <div>
-          {
-            mytoys.map(mytoy => <MyToysCards key={mytoy._id}
+         
+         <div>
+         <div className="overflow-x-auto">
+  <table className="table w-full">
+    {/* head */}
+    <thead>
+      <tr>
+        <th></th>
+        <th>Toy Image</th>
+        <th>ToyName</th>
+        <th>PRICE</th>
+        <th>AVAILABLE QUANTITY</th>
+        <th>DETAILS</th>
+      </tr>
+    </thead>
+    <tbody>
+    {
+            mytoys.map((mytoy, index) => <MyToysCards key={mytoy._id}
             mytoy={mytoy}
+            index={index}
             ></MyToysCards>)
           }
-        </div>
+      
+    </tbody>
+  </table>
+</div>
+         </div>
+          
+         </div>
     );
 };
 
