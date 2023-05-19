@@ -3,7 +3,8 @@ import { useLoaderData } from "react-router-dom";
 
 const VewToys = () => {
     const toys = useLoaderData()
-    const {photo,toyName,sellername,sellerEmail,price,rating,quantity,details} = toys
+    // const {photo,toyName,sellername,sellerEmail,price,rating,quantity,details} = toys
+    console.log(toys)
 
     return (
         <div>

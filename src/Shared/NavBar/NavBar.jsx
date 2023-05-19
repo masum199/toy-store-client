@@ -8,13 +8,14 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext)
-  console.log(user)
 
   const NavItem = <>
+
     <li><NavLink to="/"  activeclassname="active">Home</NavLink></li>
+    <li><NavLink to="/allToys">All Toys</NavLink></li>
     {
       user ? <>
-      <li><NavLink to="/allToys">All Toys</NavLink></li>
+      
     <li><NavLink to="/myToy">My Toys</NavLink></li>
     <li><NavLink to="/addAToy"> Add A Toy</NavLink></li>
       </> : ""

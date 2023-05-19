@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         {
           path:'allToys/:id',
           element:<PrivateRoutes><VewToys></VewToys></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/alltoys/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5000/alltoys/toys/${params.id}`)
         },
         {
           path:'myToy',
