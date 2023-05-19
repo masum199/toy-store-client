@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 
 const Registration = () => {
@@ -26,9 +27,30 @@ const Registration = () => {
           displayName: name,
           photoURL: photo,
         })
+        Swal.fire({
+          title: 'Success',
+          text: 'Registered successfully! now LogIn',
+          icon: 'success',
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
       })
       .catch(error => {
-        console.log(error.message)
+        const message = error.message
+        console.log(message)
+        Swal.fire({
+          title: 'error',
+          text: message,
+          icon: 'error',
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 2000,
+          timerProgressBar: true,
+        });
       })
 
   }
@@ -46,6 +68,7 @@ const Registration = () => {
               name="name"
               placeholder="Name"
               className="input input-unique input-bordered input-opacity-80 input-accent w-full"
+              required
             />
           </div>
           <div className="relative">
@@ -55,6 +78,7 @@ const Registration = () => {
               name="photo"
               placeholder="Photo"
               className="input input-unique input-bordered input-opacity-80 input-accent w-full"
+              required
             />
           </div>
           <div className="relative">
@@ -64,6 +88,7 @@ const Registration = () => {
               name="email"
               placeholder="Email"
               className="input input-unique input-bordered input-opacity-80 input-accent w-full"
+              required
             />
           </div>
           <div className="relative">
@@ -73,6 +98,7 @@ const Registration = () => {
               name="password"
               placeholder="Password"
               className="input input-unique input-bordered input-opacity-80 input-accent w-full"
+              required
             />
             <label className="label absolute text-sm text-white mt-2">
               Already have an account?

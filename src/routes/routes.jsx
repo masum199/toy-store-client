@@ -11,6 +11,7 @@ import AddAToy from "../Pages/AddAToy/AddAToy";
 import Blog from "../Pages/Blog/Blog";
 import PrivateRoutes from "./PrivateRoutes";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import VewToys from "../Pages/VewToys/VewToys";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +32,12 @@ const router = createBrowserRouter([
         },
         {
           path:'allToys',
-          element:<PrivateRoutes><AllToys></AllToys></PrivateRoutes>
+          element:<AllToys></AllToys>
+        },
+        {
+          path:'allToys/:id',
+          element:<PrivateRoutes><VewToys></VewToys></PrivateRoutes>,
+          loader: ({params}) => fetch(`http://localhost:5000/alltoys/${params.id}`)
         },
         {
           path:'myToy',
@@ -44,7 +50,8 @@ const router = createBrowserRouter([
         {
           path:'blog',
           element:<Blog></Blog>
-        }
+        },
+        
       ]
     },
     {

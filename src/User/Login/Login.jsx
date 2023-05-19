@@ -22,9 +22,9 @@ const Login = () => {
           text: 'Logged in successfully!',
           icon: 'success',
           toast: true,
-          position: 'top-center',
+          position: 'top',
           showConfirmButton: false,
-          timer: 3000,
+          timer: 2000,
           timerProgressBar: true,
         });
 
@@ -52,9 +52,9 @@ const Login = () => {
           text: 'Logged in successfully!',
           icon: 'success',
           toast: true,
-          position: 'top-center',
+          position: 'top',
           showConfirmButton: false,
-          timer: 3000,
+          timer: 2000,
           timerProgressBar: true,
         });
         
@@ -69,9 +69,9 @@ const Login = () => {
           text: 'please use right email and password',
           icon: 'error',
           toast: true,
-          position: 'top-center',
+          position: 'top',
           showConfirmButton: false,
-          timer: 3000,
+          timer: 2000,
           timerProgressBar: true,
         });
 
@@ -83,18 +83,20 @@ const Login = () => {
 
   return (
 
-    <div className="bg-gradient-to-r from-teal-500 to-blue-600">
+    <div className="bg-gradient-to-r from-purple-900 to-indigo-900">
     <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full sm:max-w-md">
-        <h1 className="text-6xl font-bold text-gray-800 mb-8">Welcome back!</h1>
-        <p className="text-lg text-gray-700 mb-10">Sign in to your account</p>
-        <div className="flex items-center justify-center space-x-4">
-          <button
-            onClick={handleGoogleLogin}
-            className="btn btn-accent btn-lg w-32 flex items-center justify-center"
-          >
-            <FaGoogle className="text-2xl" />
-          </button>
+        <h1 className="text-6xl font-bold text-gray-800 mb-8 text-center">Welcome back!</h1>
+        <div className="flex flex-col items-center space-y-4">
+          <p className="text-gray-700">Login with:</p>
+          <div className="flex space-x-4">
+            <button
+              onClick={handleGoogleLogin}
+              className="btn btn-accent btn-lg w-32 flex items-center justify-center"
+            >
+              <FaGoogle className="text-2xl" />
+            </button>
+          </div>
         </div>
         <div className="flex items-center justify-center mt-6">
           <div className="w-1/4 h-px bg-gray-400"></div>
@@ -120,7 +122,7 @@ const Login = () => {
               className="input input-bordered input-accent w-full"
             />
             <label className="label absolute text-sm text-gray-600 mt-2">
-              Don't have an account?{' '}
+              Don`t have an account?{' '}
               <Link className="font-bold" to="/register">
                 Register now
               </Link>
@@ -133,16 +135,16 @@ const Login = () => {
               className="btn btn-primary btn-lg w-full py-4 font-semibold tracking-wider mt-6"
             />
           </div>
-          <div className="text-center text-gray-600 text-sm">
-            By signing in, you agree to our{' '}
-            <Link className="text-accent font-semibold">
+          <div className="text-center text-gray-600 text-sm mt-6">
+            By signing in, you agree to our
+            <span className="text-accent font-semibold">
               Terms of Service
-            </Link>{' '}
-            and{' '}
-            <Link className="text-accent font-semibold">
+            </span>
+            and
+            <span className="text-accent font-semibold">
               Privacy Policy
-            </Link>
-            .
+            </span>
+            
           </div>
         </form>
       </div>

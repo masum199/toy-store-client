@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const AddAToy = () => {
@@ -33,7 +34,16 @@ const AddAToy = () => {
             .then(data => {
                 console.log(data)
                 if(data.insertedId){
-                    alert('product added successfully')
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'You have successfully inserted a new product',
+                        icon: 'success',
+                        toast: true,
+                        position: 'top',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                      });
                 }
             })
       
