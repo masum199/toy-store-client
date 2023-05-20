@@ -16,7 +16,7 @@ const ViewToys = () => {
           <p className="text-2xl font-bold mt-4">${price}</p>
           <p className="text-gray-600">Available: {quantity}</p>
           <p className="text-yellow-500 mt-2">
-            Rating: {rating} {/* Add appropriate star icons or rating component here */}
+            Rating: {rating} 
           </p>
           <p className="mt-4">{details}</p>
         </div>
