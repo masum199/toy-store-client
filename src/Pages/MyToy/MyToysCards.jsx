@@ -13,7 +13,7 @@ const MyToysCards = ({ mytoy, index }) => {
   const handleDelete = (_id) => {
     const proceed = window.confirm("Are you sure you want to delete");
     if (proceed) {
-      fetch(`http://localhost:5000/alltoys/delete/${_id}`, {
+      fetch(`https://toy-store-server-alpha.vercel.app/alltoys/delete/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

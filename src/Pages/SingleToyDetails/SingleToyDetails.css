@@ -1,0 +1,94 @@
+.single-toy-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #352626;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+  
+  @media (min-width: 768px) {
+    .single-toy-details {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  
+    .image-container {
+      flex: 1;
+      margin-right: 40px;
+    }
+  
+    .info-container {
+      flex: 1;
+    }
+  }
+  
+  .toy-name {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .seller-info {
+    
+
+    margin-bottom: 40px;
+  }
+  
+  .seller-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .seller-email {
+    font-size: 1.2rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .price-rating-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .price-container {
+    text-align: center;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f44336;
+  }
+  
+  .availability {
+    font-size: 1.2rem;
+    color: #ccc;
+  }
+  
+  .rating-container {
+    text-align: center;
+  }
+  
+  .empty-star {
+    color: #b0bec5;
+    font-size: 2.5rem;
+  }
+  
+  .placeholder-star,
+  .full-star {
+    color: #ffd54f;
+    font-size: 2.5rem;
+  }
+  
+  .description {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }

@@ -1,32 +1,46 @@
-import { FaRegStar, FaStar } from "react-icons/fa";
+import { FaRegStar, FaStar, FaEnvelope } from "react-icons/fa";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
+import "./SingleToyDetails.css";
 
 const SingleToyDetails = () => {
   const toys = useLoaderData();
   const { picture, description, price, quantity, rating, sellerName, sellerEmail, toyName } = toys;
 
   return (
-    <div className="bg-gray-200 min-h-screen">
-      <div className="flex flex-col lg:flex-row-reverse justify-center items-center">
-        <img src={picture} alt="Toy" className="max-w-sm rounded-lg shadow-2xl" />
-        <div className="text-center lg:text-left p-4">
-          <h1 className="text-5xl font-bold">{toyName}</h1>
-          <p className="text-gray-600">{sellerName}</p>
-          <p className="text-gray-600">{sellerEmail}</p>
-          <p className="text-2xl font-bold mt-4">${price}</p>
-          <p className="text-gray-600">Available: {quantity}</p>
-          <div className="flex-grow-1">
+    <div className="single-toy-details">
+      <div className="image-container">
+        <img src={picture} alt="Toy" className="toy-image" />
+      </div>
+      <div className="info-container">
+        <h1 className="toy-name">{toyName}</h1>
+        <div className="seller-info">
+          <h2 className="seller-name">
+            <FaEnvelope className="icon-envelope mr-2" />
+            {sellerName}
+          </h2>
+          <p className="seller-email">
+            <FaEnvelope className="icon-envelope mr-2" />
+            {sellerEmail}
+          </p>
+        </div>
+        <div className="price-rating-container">
+          <div className="price-container">
+            <p className="price">${price}</p>
+            <p className="availability">Available: {quantity} in stock</p>
+          </div>
+          <div className="rating-container lg:mr-10">
+            <p>{rating} Rating</p>
             <Rating
               placeholderRating={rating}
-              emptySymbol={<FaRegStar />}
+              emptySymbol={<FaRegStar className="empty-star" />}
               readonly
-              placeholderSymbol={<FaStar className="text-warning" />}
-              fullSymbol={<FaStar />}
+              placeholderSymbol={<FaStar className="placeholder-star" />}
+              fullSymbol={<FaStar className="full-star" />}
             />
           </div>
-          <p className="mt-4">{description}</p>
         </div>
+        <p className="description">{description}</p>
       </div>
     </div>
   );

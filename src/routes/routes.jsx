@@ -16,62 +16,62 @@ import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 import SingleToyDetails from "../Pages/SingleToyDetails/SingleToyDetails";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children: [
-        {
-          path: '/',
-          element:<Home></Home>
-        },
-        {
-          path:'login',
-          element:<Login></Login>
-        },
-        {
-          path:'register',
-          element:<Registration></Registration>
-        },
-        {
-          path:'allToys',
-          element:<AllToys></AllToys>
-        },
-        {
-          path:'allToys/:id',
-          element:<PrivateRoutes><VewToys></VewToys></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/alltoys/toys/${params.id}`)
-        },
-        {
-          path:'myToy',
-          element:<PrivateRoutes><MyToy></MyToy></PrivateRoutes>
-        },
-        {
-          path:'updatetoys/:id',
-          element:<PrivateRoutes><UpdateToys ></UpdateToys></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/alltoys/toys/${params.id}`)
-        },
-        {
-          path: 'addAToy',
-          element:<PrivateRoutes><AddAToy></AddAToy></PrivateRoutes>
-        },
-        {
-          path:'blog',
-          element:<Blog></Blog>
-        },
-        {
-          path:'singletoy/:id',
-          element:<PrivateRoutes><SingleToyDetails></SingleToyDetails></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
-        }
-        
-      ]
-    },
-    {
-      path:'/*',
-      element:<ErrorPage></ErrorPage>
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: 'register',
+        element: <Registration></Registration>
+      },
+      {
+        path: 'allToys',
+        element: <AllToys></AllToys>
+      },
+      {
+        path: 'allToys/:id',
+        element: <PrivateRoutes><VewToys></VewToys></PrivateRoutes>,
+        loader: ({ params }) => fetch(`https://toy-store-server-alpha.vercel.app/alltoys/toys/${params.id}`)
+      },
+      {
+        path: 'myToy',
+        element: <PrivateRoutes><MyToy></MyToy></PrivateRoutes>
+      },
+      {
+        path: 'updatetoys/:id',
+        element: <PrivateRoutes><UpdateToys ></UpdateToys></PrivateRoutes>,
+        loader: ({ params }) => fetch(`https://toy-store-server-alpha.vercel.app/alltoys/toys/${params.id}`)
+      },
+      {
+        path: 'addAToy',
+        element: <PrivateRoutes><AddAToy></AddAToy></PrivateRoutes>
+      },
+      {
+        path: 'blog',
+        element: <Blog></Blog>
+      },
+      {
+        path: 'singletoy/:id',
+        element: <PrivateRoutes><SingleToyDetails></SingleToyDetails></PrivateRoutes>,
+        loader: ({ params }) => fetch(`https://toy-store-server-alpha.vercel.app/categories/${params.id}`)
+      }
 
-    }
-  ]);
+    ]
+  },
+  {
+    path: '/*',
+    element: <ErrorPage></ErrorPage>
+
+  }
+]);
 
 
-  export default router
+export default router

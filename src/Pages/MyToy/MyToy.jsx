@@ -9,7 +9,7 @@ const MyToy = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/alltoys/user/${user.email}?sortOrder=${sortOrder}`)
+    fetch(`https://toy-store-server-alpha.vercel.app/alltoys/user/${user.email}?sortOrder=${sortOrder}`)
       .then((res) => res.json())
       .then((data) => {
         setMytoys(data);

@@ -10,7 +10,7 @@ const TabPages = () => {
   const [activeTab, setActiveTab] = useState("Sports Cars");
 
   useEffect(() => {
-    fetch('http://localhost:5000/categories')
+    fetch('https://toy-store-server-alpha.vercel.app/categories')
       .then(res => res.json())
       .then(data => {
         setCategories(data);
@@ -33,7 +33,7 @@ const TabPages = () => {
           <p className="text-gray-600">Browse through different categories of toy cars.</p>
         </div>
         <Tabs>
-          <TabList className="flex justify-center my-5 ">
+          <TabList className="flex gap-8 justify-center my-5 ">
      
             <Tab onClick={() => handleTabClick("Sports Cars")} className="btn btn-outline btn-primary">
               Sports Cars
