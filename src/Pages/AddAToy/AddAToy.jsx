@@ -8,7 +8,7 @@ const AddAToy = () => {
 
 
     const handleAddToy = (event) => {
-        const proceed = confirm('Are you sure you want to delete')
+        const proceed = confirm('Are you sure you went to add this product')
         event.preventDefault();
         const form = event.target
         const photo = form.photo.value
