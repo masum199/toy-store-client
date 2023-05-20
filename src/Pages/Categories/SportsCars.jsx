@@ -1,13 +1,25 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
+import { useState } from 'react';
 
 
 const SportsCars = ({ categorie }) => {
-    const { picture, toyName, price, rating } = categorie
+    const { picture, toyName, price, rating, description
+    } = categorie;
+    const [modalOpen, setModalOpen] = useState(false);
+    
+
+    const openModal = () => {
+       
+        setModalOpen(true);
+        
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
+
     return (
         <div className="">
-
-
             <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <img className="rounded-t-lg" src={picture} alt="" />
                 <div className="p-5">
@@ -17,19 +29,62 @@ const SportsCars = ({ categorie }) => {
                         <p>{rating}</p>
                     </div>
                     <div className="flex justify-center">
-                    <button className="btn-wide relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
-                        <span className="btn-wide relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                            Vew Details
-                        </span>
-                    </button>
+                        <button
+                            className="btn-wide relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800"
+                            onClick={openModal}
+                        >
+                            <span className="btn-wide relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                View Details
+                            </span>
+                        </button>
                     </div>
-
                 </div>
             </div>
 
+            {modalOpen && (
+                <div
+                    id="staticModal"
+                    data-modal-backdrop="static"
+                    tabIndex="-1"
+                    aria-hidden="true"
+                    className="fixed flex justify-center top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+                >
+                    <div className="relative w-full max-w-2xl max-h-full">
+                        <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                            <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                                <h3 className="text-xl text-center font-semibold text-gray-900 dark:text-white">HERE TOYS INFORMATION</h3>
+                                <button
+                                    type="button"
+                                    className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                    onClick={closeModal}
+                                >
+                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                            clipRule="evenodd"
+                                        ></path>
+                                    </svg>
+                                </button>
+                                {/* modal info */}
+                            </div>
+                            <div className="p-6 space-y-6  gap-10">
+                                <div className='flex justify-center'>
+                                <div>
+                                <img className='w-96 h-72 ' src={picture} alt="" />
+                                </div>
+                                </div>
+                                <div>
+                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">{description
+                                }</p>
+                                </div>
+                               
+                            </div>
 
-
-
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
