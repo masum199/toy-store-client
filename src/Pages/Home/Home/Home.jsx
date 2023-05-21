@@ -8,8 +8,8 @@ const Home = () => {
     return (
         <div>
            <Banner></Banner>
-           <Gellary></Gellary>
            <TapPages></TapPages>
+           <Gellary></Gellary>
            <PersonalSection1></PersonalSection1>
            <PersonalSection2></PersonalSection2>
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { FaCar, FaHammer, FaLightbulb, FaBookOpen, FaCube, FaShieldAlt } from 'react-icons/fa';
 import './PersonalSection1.css';
 import { useEffect } from 'react';
