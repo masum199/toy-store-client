@@ -1,0 +1,38 @@
+.blog-container {
+    background-color: #3c8dbc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .blog-heading {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .content-container {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .blog-item {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blog-question {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .blog-answer {
+    color: #555;
+    line-height: 1.6;
+  }
