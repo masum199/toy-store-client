@@ -2,8 +2,18 @@
     color: transparent;
     font-family: arial, Helvetica, sans-serif;
     -webkit-text-stroke-width: 1px ;
-    -webkit-text-stroke-color: black ;
+    -webkit-text-stroke-color: rgb(241, 237, 237) ;
 }
 .back {
-    
+    background-image: url('../../assets/images/bbbb.jpg');
 }
+.sty{
+    background-image: url('../../assets/images/bbbb.jpg');
+    filter: blur(1px); /* Apply blur effect */
+    transition: filter 0.5s ease;
+}
+
+.sty:hover {
+    filter: none; /* Remove blur effect on hover */
+    transform: scale(1.1); /* Apply scale transformation on hover */
+  }
