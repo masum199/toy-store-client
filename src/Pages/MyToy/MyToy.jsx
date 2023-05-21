@@ -3,10 +3,12 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import MyToysCards from "./MyToysCards";
 import useTitle from "../../Title/Title";
 
+
 const MyToy = () => {
+  useTitle("My Toys")
   const [mytoys, setMytoys] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
-  useTitle("My Toys")
+  
   const { user } = useContext(AuthContext);
 
   useEffect(() => {

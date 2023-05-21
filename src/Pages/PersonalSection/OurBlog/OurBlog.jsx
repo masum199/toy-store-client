@@ -8,9 +8,9 @@ import blog3 from '../../../assets/images/blog3.jpg';
 import blog4 from '../../../assets/images/blog4.jpg';
 import blog5 from '../../../assets/images/blog5.jpg';
 import blog6 from '../../../assets/images/blog8.jpg';
-import './PersonalSection2.css';
-
-const PersonalSection2 = () => {
+import useTitle from '../../../Title/Title';
+const OurBlog = () => {
+  useTitle("Our Blog");
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -61,4 +61,4 @@ const PersonalSection2 = () => {
   );
 };
 
-export default PersonalSection2;
+export default OurBlog;

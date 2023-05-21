@@ -2,8 +2,10 @@ import { FaRegStar, FaStar, FaEnvelope } from "react-icons/fa";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
 import "./SingleToyDetails.css";
+import useTitle from "../../Title/Title";
 
 const SingleToyDetails = () => {
+  useTitle("Toy Details");
   const toys = useLoaderData();
   const { photo,category, details, price, quantity, rating, sellername, sellerEmail, toyName } = toys;
 

@@ -7,7 +7,9 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
+
 const SportsCars = ({ categorie }) => {
+
   const { photo, toyName, price, rating, _id } = categorie;
   const { user } = useContext(AuthContext);
 console.log(categorie)

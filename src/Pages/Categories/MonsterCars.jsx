@@ -5,8 +5,10 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 
+
 const MonsterCars = ({ categorie }) => {
     const { photo, toyName, price, rating,_id } = categorie
+  
     return (
         <div className="">
 

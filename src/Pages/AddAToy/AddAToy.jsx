@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../Title/Title";
 
 
 const AddAToy = () => {
     const { user } = useContext(AuthContext)
-
+    useTitle("Add Product")
 
     const handleAddToy = (event) => {
         const proceed = confirm('Are you sure you went to add this product')

@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import error from '../../assets/images/5203299.jpg';
+import useTitle from '../../Title/Title';
 
 const ErrorPage = () => {
+  useTitle("Error Page")
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-slate-400 text-white">
       <img src={error} alt="Error" className="w-1/3" />

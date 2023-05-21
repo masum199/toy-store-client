@@ -1,11 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import { FaCar, FaHammer, FaLightbulb, FaBookOpen, FaCube, FaShieldAlt } from 'react-icons/fa';
-import './PersonalSection1.css';
+import './BestFeatures.css';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useTitle from '../../../Title/Title';
 
-const PersonalSection1 = () => {
+const BestFeatures = () => {
+  useTitle("Best Features");
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -83,4 +85,4 @@ const PersonalSection1 = () => {
   );
 };
 
-export default PersonalSection1;
+export default BestFeatures;
