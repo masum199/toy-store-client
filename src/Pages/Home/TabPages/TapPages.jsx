@@ -48,7 +48,7 @@ const TabPages = () => {
           </TabList>
 
           <TabPanel>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-x-20'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-x-28'>
               {filteredCategories.map(categorie => (
                 <SportsCars
                   key={categorie._id}
@@ -58,7 +58,7 @@ const TabPages = () => {
             </div>
           </TabPanel>
           <TabPanel>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-x-28'>
               {filteredCategories.map(categorie => (
                 <Truck
                   key={categorie._id}
@@ -68,7 +68,7 @@ const TabPages = () => {
             </div>
           </TabPanel>
           <TabPanel>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-x-28'>
               {filteredCategories.map(categorie => (
                 <MonsterCars
                   key={categorie._id}

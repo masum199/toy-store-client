@@ -4,7 +4,7 @@ import image from '../../assets/images/toy12.jpg';
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-gray-500 text-white">
+    <footer className="footer p-10 bg-slate-600 text-white lg:mx-4">
       <div className="flex items-center justify-between mb-10">
         <div className="w-1/2">
           <img className="w-32 rounded-3xl" src={image} alt="" />

@@ -6,14 +6,15 @@
 }
 .back {
     background-image: url('../../assets/images/bbbb.jpg');
-}
+    position: relative;
+    overflow: hidden;
+    
+  }
+
+
 .sty{
-    background-image: url('../../assets/images/bbbb.jpg');
-    filter: blur(1px); /* Apply blur effect */
-    transition: filter 0.5s ease;
+   
+    filter: blur(1px);
+    
 }
 
-.sty:hover {
-    filter: none; /* Remove blur effect on hover */
-    transform: scale(1.1); /* Apply scale transformation on hover */
-  }

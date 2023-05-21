@@ -23,7 +23,7 @@ const OurBlog = () => {
           <h2 className='text-5xl my-10 '>Get Inspired and Stay Informed</h2>
         </div>
         <div className='flex justify-center my-10'>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 gap-x-28'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 gap-x-36'>
             <div data-aos='fade-up'>
               <img className='w-96' src={blog1} alt='' />
               <p className='blog-date text-warning'>10th August 2021</p>
