@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="flex items-center justify-between mb-10">
         <div className="w-1/2">
           <img className="w-32 rounded-3xl" src={image} alt="" />
-          <p className="text-lg font-bold mt-4">ACME Car Toys</p>
+          <p className="text-lg font-bold mt-4">CarMania</p>
           <p className="text-sm">Providing the coolest car toys since 1992</p>
           <div className=" flex mt-4 md:mt-0">
           <FaFacebookSquare className="mr-3 text-xl hover:text-blue-500" />
