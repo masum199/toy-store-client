@@ -2,10 +2,13 @@ import { useLoaderData } from "react-router-dom";
 import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import "./Vewtoys.css";
+import useTitle from "../../Title/Title";
 
 const ViewToys = () => {
   const toys = useLoaderData();
-  const { photo, toyName, sellername, sellerEmail, price, rating, quantity, details } = toys;
+  const {category, photo, toyName, sellername, sellerEmail, price, rating, quantity, details } = toys;
+
+  useTitle("VewToys")
 
   return (
     <div className="view-toys bg-gradient-to-b from-purple-900 to-blue-900 min-h-screen text-white">
@@ -15,6 +18,7 @@ const ViewToys = () => {
           <h1 className="text-4xl lg:text-5xl font-bold animate-slideInRight">{toyName}</h1>
           <p className="text-gray-400 text-lg mt-2 animate-slideInLeft">Sold by: {sellername}</p>
           <p className="text-gray-400 text-lg mt-2 animate-slideInLeft">Contact: {sellerEmail}</p>
+          <p className="text-3xl lg:text-4xl font-bold mt-4 animate-slideInRight">{category}</p>
           <p className="text-3xl lg:text-4xl font-bold mt-4 animate-slideInRight">${price}</p>
           <p className="text-gray-400 text-lg mt-2 animate-slideInLeft">Availability: {quantity}</p>
           <div className=" mt-4 animate-slideInRight">

@@ -3,12 +3,15 @@ import React from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Blog.css';
+import useTitle from '../../Title/Title';
 
 const Blog = () => {
   // Initialize AOS library
   React.useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  useTitle('bloga')
 
   return (
     <div className="blog-container" data-aos="fade-up">

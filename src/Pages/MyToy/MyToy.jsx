@@ -1,11 +1,12 @@
 import  { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import MyToysCards from "./MyToysCards";
+import useTitle from "../../Title/Title";
 
 const MyToy = () => {
   const [mytoys, setMytoys] = useState([]);
   const [sortOrder, setSortOrder] = useState("asc");
-
+  useTitle("My Toys")
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const MyToy = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="flex justify-center">
         <div>
           <div className="dropdown">
@@ -53,6 +54,8 @@ const MyToy = () => {
               <th>PRICE</th>
               <th>AVAILABLE QUANTITY</th>
               <th>DETAILS</th>
+              <th>UPDATE</th>
+              <th>DELETE</th>
             </tr>
           </thead>
           <tbody>

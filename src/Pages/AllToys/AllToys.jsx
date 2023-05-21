@@ -66,7 +66,7 @@ const AllToys = () => {
         <table className="table w-full">
           <thead>
             <tr>
-              <th></th>
+              <th>Image</th>
               <th>Seller</th>
               <th>Toy Name</th>
               <th>Sub-category</th>

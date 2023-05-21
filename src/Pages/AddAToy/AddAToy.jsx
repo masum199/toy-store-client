@@ -54,7 +54,7 @@ const AddAToy = () => {
 
 
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center bg-slate-600">
             <form onSubmit={handleAddToy} className=" bg-slate-400 p-20">
                 {/* 1 */}
                 <div className="flex gap-16">
@@ -134,11 +134,11 @@ const AddAToy = () => {
                 </div>
                 <select name="category" className="select w-full max-w-xs" defaultValue="">
                     <option disabled value="">Pick your category</option>
-                    <option value="Racing Cars">Racing Cars</option>
-                    <option value="Off-Road Vehicles">TRUCK</option>
-                    <option value="Monster Trucks">MONSTER CAR</option>
+                    <option value="Sports Cars">Sports Cars</option>
+                    <option value="TRUCK">TRUCK</option>
+                    <option value="MONSTER CAR">MONSTER CAR</option>
                 </select >
-                <input className="my-10 btn btn-block" type="submit" value="submit"/>
+                <input className="my-10 btn btn-block relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800" type="submit" value="submit"/>
             </form>
 
 

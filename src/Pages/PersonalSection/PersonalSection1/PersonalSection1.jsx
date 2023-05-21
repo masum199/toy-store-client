@@ -11,7 +11,7 @@ const PersonalSection1 = () => {
   }, []);
 
   return (
-    <div className='my-10 '>
+    <div className='my-10 lg:mx-10  mt-32'>
       <div className='text-center my-8 design' data-aos="fade-up" data-aos-delay="200">
         <h1 className='text-3xl font-bold mb-4'>The Best Features of Our Car Toys</h1>
         <p className='text-lg mb-8'>Discover why our car toys stand out from the rest!</p>

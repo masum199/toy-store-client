@@ -10,7 +10,7 @@ const TabPages = () => {
   const [activeTab, setActiveTab] = useState("Sports Cars");
 
   useEffect(() => {
-    fetch('https://toy-store-server-alpha.vercel.app/categories')
+    fetch('https://toy-store-server-alpha.vercel.app/alltoys')
       .then(res => res.json())
       .then(data => {
         setCategories(data);
@@ -22,7 +22,7 @@ const TabPages = () => {
     console.log(categories)
   };
 
-  const filteredCategories = categories.filter(categorie => categorie.categorie === activeTab);
+  const filteredCategories = categories.filter(categorie => categorie.category === activeTab);
   console.log(filteredCategories)
 
   return (
@@ -48,7 +48,7 @@ const TabPages = () => {
           </TabList>
 
           <TabPanel>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-x-20'>
               {filteredCategories.map(categorie => (
                 <SportsCars
                   key={categorie._id}

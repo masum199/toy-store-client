@@ -5,25 +5,26 @@ import "./SingleToyDetails.css";
 
 const SingleToyDetails = () => {
   const toys = useLoaderData();
-  const { picture, description, price, quantity, rating, sellerName, sellerEmail, toyName } = toys;
+  const { photo,category, details, price, quantity, rating, sellername, sellerEmail, toyName } = toys;
 
   return (
     <div className="single-toy-details">
       <div className="image-container">
-        <img src={picture} alt="Toy" className="toy-image" />
+        <img src={photo} alt="Toy" className="toy-image" />
       </div>
       <div className="info-container">
         <h1 className="toy-name">{toyName}</h1>
         <div className="seller-info">
           <h2 className="seller-name">
             <FaEnvelope className="icon-envelope mr-2" />
-            {sellerName}
+            {sellername}
           </h2>
           <p className="seller-email">
             <FaEnvelope className="icon-envelope mr-2" />
             {sellerEmail}
           </p>
         </div>
+        <p>{category}</p>
         <div className="price-rating-container">
           <div className="price-container">
             <p className="price">${price}</p>
@@ -40,7 +41,7 @@ const SingleToyDetails = () => {
             />
           </div>
         </div>
-        <p className="description">{description}</p>
+        <p className="description">{details}</p>
       </div>
     </div>
   );

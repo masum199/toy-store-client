@@ -3,11 +3,11 @@
 import { Link } from "react-router-dom";
 
 
-const AllToysTable = ({toy,index}) => {
-    const {toyName,sellername,category ,price,quantity,_id} = toy
+const AllToysTable = ({toy}) => {
+    const {photo,toyName,sellername,category ,price,quantity,_id} = toy
     return (
         <tr className="hover">
-        <th>{index + 1}</th>
+        <th><img className="w-32" src={photo} alt="" /></th>
         <td>{sellername}</td>
         <td>{toyName}</td>
         <td>{category}</td>

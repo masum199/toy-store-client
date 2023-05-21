@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 
 
 const Truck = ({categorie}) => {
-    const { picture, toyName, price, rating,_id } = categorie
+    const { photo, toyName, price, rating,_id } = categorie
     return (
         <div className="">
 
 
             <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <img className="rounded-t-lg" src={picture} alt="" />
+                <img className="rounded-t-lg" src={photo} alt="" />
                 <div className="p-5">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{toyName}</h5>
                     <div className="flex justify-between">

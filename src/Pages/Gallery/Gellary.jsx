@@ -47,9 +47,17 @@ const Gallery = () => {
   return (
 
     <div>
-        <h1 className='text-6xl text-center my-10 font-bold'>Vroom Vroom! Toy Car Gallery<br/> Where Fun Meets Speed</h1>
+       <marquee  direction="">
+       <h1 className='text-amber-300 text-4xl text-center my-10 font-bold'>Vroom Vroom! Toy Car Gallery<br/>
+        </h1>
+       </marquee>
+        <marquee direction="">
+        <h2 className='font-bold text-amber-500'>
+        Where Fun Meets Speed
+        </h2>
+        </marquee>
         <div className='flex justify-center'>   
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
         <div>
           <img className='w-80 h-80' src={category1[currentGallery]} alt={`Image ${currentGallery + 1}`} />
         </div>
