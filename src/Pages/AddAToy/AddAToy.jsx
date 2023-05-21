@@ -135,11 +135,8 @@ const AddAToy = () => {
                 <select name="category" className="select w-full max-w-xs" defaultValue="">
                     <option disabled value="">Pick your category</option>
                     <option value="Racing Cars">Racing Cars</option>
-                    <option value="Off-Road Vehicles">Off-Road Vehicles</option>
-                    <option value="Construction Vehicles">Construction Vehicles</option>
-                    <option value="Monster Trucks">Monster cars</option>
-                    <option value="Monster Trucks">classic cars</option>
-                    <option value="Brand">exotic cars</option>
+                    <option value="Off-Road Vehicles">TRUCK</option>
+                    <option value="Monster Trucks">MONSTER CAR</option>
                 </select >
                 <input className="my-10 btn btn-block" type="submit" value="submit"/>
             </form>

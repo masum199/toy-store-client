@@ -11,7 +11,7 @@ const NavBar = () => {
 
   const NavItem = <>
 
-    <li><NavLink to="/"  activeclassname="active">Home</NavLink></li>
+    <li><NavLink to="/"  activeclassname="active" className="">Home</NavLink></li>
     <li><NavLink to="/allToys">All Toys</NavLink></li>
     {
       user ? <>
@@ -44,7 +44,7 @@ const NavBar = () => {
             </ul>
           </div>
           <img className="w-20 rounded-2xl" src={NavImage} alt="" />
-          <p className="btn btn-ghost normal-case font-serif font-bold text-4xl">CarMania</p>
+          <p className=" ml-4 text-warning normal-case font-serif font-bold text-4xl">CarMania</p>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-14 px-1">
@@ -60,11 +60,11 @@ const NavBar = () => {
                 alt=""
                 title={user?.displayName}
               />
-              <button onClick={handleLogOut} className="btn btn-active">LogOut</button>
+              <button onClick={handleLogOut} className="btn btn-active text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">LogOut</button>
             </>
           ) : (
 
-            <Link to="/login" className="btn">Login</Link>
+            <Link to="/login" className="btn text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Login</Link>
 
           )}
 

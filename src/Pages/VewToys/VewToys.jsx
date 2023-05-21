@@ -17,7 +17,7 @@ const ViewToys = () => {
           <p className="text-gray-400 text-lg mt-2 animate-slideInLeft">Contact: {sellerEmail}</p>
           <p className="text-3xl lg:text-4xl font-bold mt-4 animate-slideInRight">${price}</p>
           <p className="text-gray-400 text-lg mt-2 animate-slideInLeft">Availability: {quantity}</p>
-          <div className="rating-container mt-4">
+          <div className=" mt-4 animate-slideInRight">
             <Rating
               initialRating={rating}
               emptySymbol={<FaRegStar className="empty-star" />}

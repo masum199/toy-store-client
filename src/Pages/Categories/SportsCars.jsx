@@ -10,7 +10,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 const SportsCars = ({ categorie }) => {
   const { picture, toyName, price, rating, _id } = categorie;
   const { user } = useContext(AuthContext);
-
+console.log(categorie)
   const handleViewDetails = () => {
     if (user) {
     //   
